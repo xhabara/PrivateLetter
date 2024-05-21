@@ -1,0 +1,136 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #a4b003;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2em 3em;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-bottom: 1.5em;
+    font-weight: 700;
+    color: #fb5209;
+}
+
+.dropdown-container {
+    margin-bottom: 1.5em;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.button {
+    background: #ff4d00;
+    color: white;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background: #b33e00;
+    transform: translateY(-3px);
+}
+
+.delete {
+    background: #dc3545;
+}
+
+.delete:hover {
+    background: #a71d2a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.5em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.file-input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.dropdown {
+    background: white;
+    cursor: pointer;
+}
+
+.letter-content {
+    text-align: left;
+    margin: 1.5em 0;
+    line-height: 1.6;
+}
+
+.attachments {
+    margin-top: 2em;
+}
+
+.attachments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.attachments li {
+    margin: 0.5em 0;
+}
+
+.attachments .button {
+    background: #6c757d;
+    margin: 0.5em 0;
+    display: block;
+}
+
+.attachments .button:hover {
+    background: #5a6268;
+}

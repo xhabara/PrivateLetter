@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter From{{ sender }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        {% if content %}
+        <h1>Letter from {{ sender }}</h1>
+        <div class="letter-content">
+            <p>{{ content }}</p>
+        </div>
+        <div class="actions">
+            <a href="/download_letter/{{ sender }}" class="button">DOWNLOAD LETTER</a>
+        </div>
+        {% if files %}
+        <div class="attachments">
+            
+            <ul>
+                {% for file in files %}
+                <li><a href="/download/{{ file }}" class="button">DOWNLOAD ATTACHMENT</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div class="actions">
+            <a href="/" class="button">BACK TO HOME</a>
+            <a href="/delete/{{ sender }}" class="button delete">DELETE LETTER</a>
+        </div>
+        {% else %}
+        <h1>WRITE A LETTER</h1>
+        <form action="/write" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="sender" value="{{ 'Rully' if 'Rully' in request.path else 'Emma' }}">
+            <textarea name="content" rows="10" placeholder="Write here, mylove..." required></textarea>
+            <input type="file" name="file" accept="image/*,audio/*,video/*" class="file-input">
+            <button type="submit" class="button">Send Letter</button>
+        </form>
+        <div class="actions">
+            <a href="/" class="button">HOME</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

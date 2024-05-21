@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUST BETWEEN US</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>JUST BETWEEN US</h1>
+        <div class="dropdown-container">
+            <form action="/read" method="post">
+                <select name="sender" class="dropdown" required>
+                    <option value="" disabled selected>Are you Emma or Rully?</option>
+                    <option value="Emma">From Emma</option>
+                    <option value="Rully">From Rully</option>
+                </select>
+                <div class="actions">
+                    <button type="submit" class="button read-button">READ LETTER</button>
+                    <a href="/write" class="button write-button">WRITE LETTER</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
